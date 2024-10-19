@@ -1,0 +1,211 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+    /* رنگ پس‌زمینه */
+    overflow-x: hidden;
+    /* جلوگیری از پیمایش افقی */
+}
+
+/* استایل سایدبار */
+.sidebar {
+    width: 20%;
+    height: 100vh;
+    background-color: #0d1b2a;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    transition: transform 0.6s ease;
+    /* زمان باز و بسته شدن سایدبار به ۰.۶ ثانیه تغییر یافت */
+    overflow-y: auto;
+    /* فعال کردن اسکرول عمودی */
+}
+
+/* مخفی کردن نوار اسکرول در Chrome و سایر مرورگرها */
+.sidebar::-webkit-scrollbar {
+    display: none;
+    /* مخفی کردن نوار اسکرول */
+}
+
+/* مخفی کردن نوار اسکرول در Firefox */
+.sidebar {
+    scrollbar-width: none;
+    /* مخفی کردن نوار اسکرول */
+    -ms-overflow-style: none;
+    /* مخفی کردن نوار اسکرول */
+}
+
+.profile-img {
+    width: 180px;
+    height: 180px;
+    animation: fadeIn 1s ease-in-out;
+    border: 3px solid rgb(240, 236, 236);
+    border-radius: 50%;
+}
+
+.social-icons a {
+    color: white;
+    margin: 0 10px;
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    color: white;
+    margin-top: 20px;
+    font-size: 1.1rem;
+}
+
+.nav-link:hover {
+    color: #00d9ff;
+}
+
+/* استایل محتوای اصلی */
+.main-content {
+    margin-left: 20%;
+    /* فاصله از سایدبار */
+    width: 80%;
+    min-height: 100vh;
+    /* حداقل ارتفاع صفحه */
+    background: url('img/l.jpg') no-repeat center center/cover;
+    position: relative;
+    color: white;
+    /* رنگ متن */
+    background-color: rgb(0, 0, 0);
+    /* رنگ پس‌زمینه محتوای اصلی */
+    border-radius: 5px;
+    /* گرد کردن گوشه‌ها */
+    padding: 20px;
+    /* فضای داخلی */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* سایه */
+    animation: fadeIn 1s ease-in-out;
+    transition: margin-left 0.3s ease;
+    /* برای انیمیشن هنگام باز/بسته شدن سایدبار */
+}
+
+/* کارت‌های پروژه */
+.project-card {
+    position: relative;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    /* بزرگ‌تر شدن کارت پروژه هنگام hover */
+}
+
+.project-image {
+    border-radius: 10px;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    /* تنظیم نسبت تصویر */
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.overlay-text {
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 10px;
+}
+
+/* طراحی واکنش‌گرا */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 250px;
+        /* سایدبار کوچکتر در دستگاه‌های کوچک */
+        transform: translateX(-250px);
+        /* مخفی کردن سایدبار */
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+        /* نمایش سایدبار هنگام فعال‌سازی */
+    }
+
+    .hamburger {
+        display: block;
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        /* جابجایی دکمه همبرگر به سمت راست */
+        width: 35px;
+        height: 35px;
+        background-color: transparent;
+        /* پس‌زمینه شفاف برای دکمه */
+        border: none;
+        /* بدون حاشیه */
+        z-index: 1000;
+        cursor: pointer;
+    }
+
+    .hamburger div {
+        width: 20px;
+        height: 1px;
+        background-color: #ffffff;
+        /* رنگ سفید برای خطوط */
+        margin: 5px 0;
+        transition: all 0.3s ease;
+    }
+
+    /* انیمیشن فعال‌سازی دکمه همبرگر */
+    .hamburger.active div:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active div:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .main-content {
+        width: 100%;
+        margin-left: 0;
+        /* حذف فاصله برای دستگاه‌های کوچک */
+        min-height: 100vh;
+    }
+
+    .project-image {
+        height: 200px;
+        /* تنظیم ارتفاع تصویر پروژه در دستگاه‌های کوچک */
+    }
+}
+
+/* انیمیشن برای محتوای اصلی */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

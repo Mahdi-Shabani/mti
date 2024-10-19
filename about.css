@@ -1,0 +1,179 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+    overflow-x: hidden;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 20%;
+    height: 100vh;
+    background-color: #0d1b2a;
+    color: white;
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+    position: fixed;
+    /* Fix sidebar */
+    top: 0;
+    /* Align to top */
+}
+
+/* For WebKit browsers (Chrome, Safari, etc.) */
+.sidebar::-webkit-scrollbar {
+    width: 0;
+    /* Hide scrollbar */
+    height: 0;
+    /* Hide scrollbar */
+}
+
+.profile-img {
+    width: 180px;
+    height: 180px;
+    animation: fadeIn 1s ease-in-out;
+    border: 3px solid rgb(240, 236, 236);
+    border-radius: 50%;
+}
+
+.social-icons a {
+    color: white;
+    margin: 0 10px;
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    color: white;
+    margin-top: 20px;
+    font-size: 1.1rem;
+}
+
+.nav-link:hover {
+    color: #00d9ff;
+}
+
+/* Main Content Styling */
+.main-content {
+    margin-left: 20%;
+    /* Adjust margin for sidebar */
+    height: auto;
+    /* Set height to auto */
+    min-height: 100vh;
+    /* Ensure it covers full height */
+    position: relative;
+    color: white;
+    background: url('img/l.jpg') no-repeat center center/cover;
+    border-radius: 5px;
+    padding: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Animation for fading in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hamburger Icon Styling */
+.hamburger-icon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.hamburger-icon button {
+    background: none;
+    /* Remove background */
+    border: none;
+    /* Remove border */
+    color: #ffffff;
+    /* Change color to white */
+    cursor: pointer;
+    /* Change mouse pointer */
+}
+
+/* Sidebar Hidden by Default on Small Screens */
+@media (max-width: 992px) {
+    .sidebar {
+        width: 150px;
+        height: 100vh;
+        transform: translateX(-100%);
+        z-index: 998;
+        transition: transform 0.6s ease, width 0.6s ease;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-left: 0;
+        /* Remove margin on small screens */
+        padding: 10px;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 70%;
+        height: 100%;
+    }
+}
+
+/* Skills Section */
+.skills {
+    display: flex;
+    justify-content: space-between;
+    /* Space between skill circles */
+    flex-wrap: wrap;
+    /* Wrap to next line if needed */
+    margin-top: 30px;
+    /* Add space above skills section */
+}
+
+.skill-circle {
+    width: 100px;
+    /* Adjust circle size */
+    height: 100px;
+    /* Adjust circle size */
+    border-radius: 50%;
+    background: #00d9ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    /* Hide overflow for percentage text */
+}
+
+.skill-circle .percentage {
+    position: absolute;
+    color: white;
+    /* Percentage text color */
+    font-size: 24px;
+    /* Adjust font size */
+}
+
+/* Adjustments for skill animation */
+@keyframes skill-animation {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.skill-circle {
+    animation: skill-animation 0.5s ease-in-out;
+    /* Skill circle animation */
+}

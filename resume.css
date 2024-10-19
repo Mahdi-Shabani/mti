@@ -1,0 +1,179 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+    overflow-x: hidden;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 70%;
+    height: 100vh;
+    background-color: #0d1b2a;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    transition: all 0.8s ease;
+    z-index: 999;
+    overflow-y: auto;
+}
+
+/* مخفی کردن نوار اسکرول در Chrome و سایر مرورگرها */
+.sidebar::-webkit-scrollbar {
+    display: none;
+}
+
+/* مخفی کردن نوار اسکرول در Firefox */
+.sidebar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+/* نمایش نوار کناری زمانی که active شود */
+.sidebar.active {
+    left: 0;
+}
+
+/* انیمیشن برای تصویر پروفایل */
+.profile-img {
+    width: 180px;
+    height: 180px;
+    animation: fadeIn 1s ease-in-out;
+    border: 3px solid rgb(240, 236, 236);
+    border-radius: 50%;
+}
+
+/* Main Content Styling */
+.main-content {
+    width: 100%;
+    min-height: 100vh;
+    background: url('img/l.jpg') no-repeat center center/cover;
+    position: relative;
+    color: white;
+    padding: 20px;
+    overflow-y: auto;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* سایر استایل‌ها ... */
+
+/* آیکون‌های اجتماعی */
+.social-icons a {
+    color: white;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #00d9ff;
+}
+
+/* مربع‌ها */
+.resume-box {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.resume-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* انیمیشن بزرگ شدن مربع */
+.resume-card:hover .resume-box {
+    transform: scale(1.05);
+}
+
+/* لینک‌ها */
+.link {
+    display: block;
+    margin-top: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+/* تنظیمات برای نوار ناوبری */
+.nav {
+    position: relative;
+    z-index: 2;
+}
+
+/* تنظیمات برای لینک‌های نوار ناوبری */
+.nav-link {
+    color: white;
+    margin-top: 20px;
+    font-size: 1.1rem;
+}
+
+.nav-link:hover {
+    color: #00d9ff;
+}
+
+/* انیمیشن برای ورود محتوا */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* تنظیمات برای دستگاه‌های بزرگ */
+@media (min-width: 768px) {
+    .sidebar {
+        width: 20%;
+        height: 100vh;
+        left: 0;
+        /* سایدبار در حالت بزرگ همیشه نمایش داده می‌شود */
+    }
+
+    .main-content {
+        width: 80%;
+        margin-left: 20%;
+        min-height: 100vh;
+    }
+}
+
+/* دکمه همبرگری */
+.hamburger-icon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.hamburger-icon button {
+    background-color: transparent;
+    /* حذف پس‌زمینه */
+    border: none;
+    /* حذف حاشیه */
+    color: white;
+    /* رنگ آیکون */
+    cursor: pointer;
+    /* تغییر نشانگر ماوس */
+}
+
+/* حذف outline هنگام کلیک */
+.hamburger-icon button:focus {
+    outline: none;
+    /* حذف outline */
+}
+
+/* حذف حالت hover */
+.hamburger-icon button:hover {
+    background: none;
+    /* حذف پس‌زمینه در حالت hover */
+}

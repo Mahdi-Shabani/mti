@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="projects.css"> <!-- فایل CSS مخصوص صفحه پروژه‌ها -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <!-- آیکون‌های Bootstrap -->
+    <title>Projects</title>
+</head>
+
+<body>
+    <!-- دکمه همبرگر -->
+    <div class="hamburger" onclick="toggleSidebar()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <div class="d-flex">
+        <div class="sidebar p-4">
+            <div class="text-center">
+                <img src="img/i.jpg" alt="Profile Picture" class="profile-img rounded-circle"> <!-- تصویر پروفایل -->
+                <h3 class="mt-3">Mahdi</h3>
+                <div class="social-icons mt-2">
+                    <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" class="me-3"><i
+                            class="bi bi-linkedin" style="font-size: 1.5rem;"></i></a>
+                    <a href="https://github.com/Mahdi-Shabani" target="_blank"><i class="bi bi-github"
+                            style="font-size: 1.5rem;"></i></a>
+                </div>
+            </div>
+            <nav class="nav flex-column mt-5">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="about.html">About Me</a>
+                <a class="nav-link" href="resume.html">Resume & Certificates</a>
+                <a class="nav-link active" href="projects.html">Projects</a>
+                <a class="nav-link" href="contact.html">Contact</a>
+            </nav>
+        </div>
+
+        <div class="main-content p-5">
+            <h1 class="text-center mb-4">Projects</h1>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="project-card">
+                        <a href="https://github.com/Mahdi-Shabani/Log-File-Analysis-and-Visualization" target="_blank">
+                            <img src="img/n.png" alt="Project 1" class="img-fluid project-image">
+                            <div class="project-overlay">
+                                <div class="overlay-text">Log File Analysis and Visualization</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="project-card">
+                        <a href="https://github.com/Mahdi-Shabani/Global-Market-Sales-Data-Analysis">
+                            <img src="img/g.jpeg" alt="Project 2" class="img-fluid project-image">
+                            <div class="project-overlay">
+                                <div class="overlay-text"> Global Market Sales Analysis</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="project-card">
+                        <a href="https://github.com/Mahdi-Shabani/Breast-Cancer">
+                            <img src="img/h.jpeg" alt="Project 3" class="img-fluid project-image">
+                            <div class="project-overlay">
+                                <div class="overlay-text">Breast Cancer</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            document.querySelector('.sidebar').classList.toggle('active');
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

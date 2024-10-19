@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="about.css"> <!-- فایل CSS اصلی -->
+    <title>About Me</title>
+    <style>
+        .skill {
+            display: inline-block;
+            margin: 20px;
+            /* فاصله بین دایره‌ها */
+            text-align: center;
+        }
+
+        .progress-circle {
+            width: 80px;
+            /* اندازه دایره */
+            height: 80px;
+            /* اندازه دایره */
+        }
+
+        .skills-section {
+            text-align: center;
+            margin-top: 40px;
+            /* فاصله بین بخش مهارت‌ها و متن About Me */
+        }
+
+        .about-me {
+            margin-bottom: 40px;
+            /* فاصله زیر بخش About Me */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- دکمه همبرگری -->
+    <div class="hamburger-icon d-lg-none">
+        <button class="btn" id="hamburger-btn">
+            <i class="bi bi-list" style="font-size: 1.5rem;"></i>
+        </button>
+    </div>
+
+    <div class="d-flex">
+        <div class="sidebar p-4">
+            <div class="text-center">
+                <img src="img/i.jpg" alt="Profile Picture" class="profile-img rounded-circle"> <!-- تصویر پروفایل -->
+                <h3 class="mt-3">Mahdi</h3>
+                <div class="social-icons mt-2">
+                    <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" class="me-3">
+                        <i class="bi bi-linkedin" style="font-size: 1.5rem;"></i></a>
+                    <a href="https://github.com/Mahdi-Shabani" target="_blank">
+                        <i class="bi bi-github" style="font-size: 1.5rem;"></i>
+                    </a>
+                </div>
+            </div>
+            <nav class="nav flex-column mt-5">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link active" href="about.html">About Me</a>
+                <a class="nav-link" href="resume.html">Resume & Certificates</a>
+                <a class="nav-link" href="projects.html">Projects</a>
+                <a class="nav-link" href="contact.html">Contact</a>
+            </nav>
+        </div>
+
+        <div class="main-content p-5">
+            <section class="about-me">
+                <h1><span id="about-me-text"></span></h1> <!-- متن داینامیک برای About Me -->
+                <p>I am Mehdi and I hold a bachelor's degree in law. However, my main interest in programming and
+                    artificial intelligence has led me to the world of technology and computer science.
+                    I have an intermediate proficiency in Python programming and I am continuously learning and
+                    advancing in this field. My primary focus is on developing artificial intelligence models and
+                    utilizing FastAPI,
+                    specifically in the area of neural networks, particularly RNNs and LLMs.
+
+                    Over the past year, I worked as an AI expert at an AI startup. My main responsibilities included
+                    researching the latest AI articles and transforming them into practical documentation, as well as
+                    implementing artificial intelligence models. Additionally, I worked on debugging and resolving
+                    issues. Currently, my goal is to enhance my skills in neural networks and machine learning to become
+                    a professional AI developer in this field.
+
+                    I am passionate about learning and growth, always striving to improve my knowledge in various
+                    aspects of artificial intelligence. My achievements include earning machine learning and Python
+                    programming certificates from Coursera, as well as completing various projects in this field.</p>
+
+                <div class="about-info mt-4">
+                    <h2>
+                        <span id="developer-text"></span> <!-- متن داینامیک برای Developer -->
+                    </h2>
+                </div>
+            </section>
+
+            <!-- بخش مهارت‌ها (Skill) -->
+            <div class="skills-section">
+                <h2><span id="skill-text"></span></h2> <!-- انیمیشن تایپ برای Skill -->
+
+                <!-- دایره‌های درصدی برای مهارت‌ها -->
+                <div class="skill">
+                    <p>Python <span class="percentage">50%</span></p>
+                    <div class="progress-circle" data-percent="50"></div>
+                </div>
+
+                <div class="skill">
+                    <p>Machine Learning <span class="percentage">40%</span></p>
+                    <div class="progress-circle" data-percent="40"></div>
+                </div>
+
+                <div class="skill">
+                    <p>Flutter <span class="percentage">20%</span></p>
+                    <div class="progress-circle" data-percent="20"></div>
+                </div>
+
+                <div class="skill">
+                    <p>HTML & CSS <span class="percentage">30%</span></p>
+                    <div class="progress-circle" data-percent="30"></div>
+                </div>
+
+                <div class="skill">
+                    <p>FastAPI <span class="percentage">30%</span></p>
+                    <div class="progress-circle" data-percent="30"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/1.0.1/progressbar.min.js"></script>
+
+    <script>
+        // کد برای انیمیشن متن About Me
+        var typedAboutMe = new Typed('#about-me-text', {
+            strings: ["About Me"],
+            typeSpeed: 100,
+            backSpeed: 100,
+            loop: true
+        });
+
+        // انیمیشن تایپ برای Skill
+        var typedSkill = new Typed('#skill-text', {
+            strings: ["Skills"],
+            typeSpeed: 100,
+            backSpeed: 100,
+            loop: true
+        });
+
+        // دایره‌های درصدی برای مهارت‌ها
+        $('.progress-circle').each(function () {
+            var percent = $(this).data('percent');
+            var bar = new ProgressBar.Circle(this, {
+                color: '#00ccff',
+                trailColor: '#f4f4f4',
+                strokeWidth: 8,
+                duration: 1400,
+                easing: 'bounce',
+                from: { color: '#ff0000', width: 1 },
+                to: { color: '#00ff00', width: 8 },
+                step: function (state, circle) {
+                    circle.path.setAttribute('stroke', state.color);
+                    circle.path.setAttribute('stroke-width', state.width);
+                    var value = Math.round(circle.value() * 100);
+                    if (value === 0) {
+                        circle.setText('');
+                    } else {
+                        circle.setText(value + '%');
+                    }
+                }
+            });
+            bar.animate(percent / 100); // انیمیشن درصد
+        });
+
+        // کنترل سایدبار با دکمه همبرگری
+        $(document).ready(function () {
+            $('#hamburger-btn').on('click', function () {
+                $('.sidebar').toggleClass('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
